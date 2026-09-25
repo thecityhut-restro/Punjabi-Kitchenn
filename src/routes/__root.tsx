@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 
@@ -30,17 +31,37 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "Happy Reviews is a web app for collecting customer feedback and directing reviews." },
+      {
+        name: "description",
+        content:
+          "Happy Reviews is a web app for collecting customer feedback and directing reviews.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Happy Reviews is a web app for collecting customer feedback and directing reviews." },
+      {
+        property: "og:description",
+        content:
+          "Happy Reviews is a web app for collecting customer feedback and directing reviews.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Happy Reviews is a web app for collecting customer feedback and directing reviews." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1fa85bc5-02fa-47b6-8580-94c5d2556d60/id-preview-63c92cb8--081c515c-ab30-41fc-9a4c-622145389803.lovable.app-1776539446458.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1fa85bc5-02fa-47b6-8580-94c5d2556d60/id-preview-63c92cb8--081c515c-ab30-41fc-9a4c-622145389803.lovable.app-1776539446458.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Happy Reviews is a web app for collecting customer feedback and directing reviews.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1fa85bc5-02fa-47b6-8580-94c5d2556d60/id-preview-63c92cb8--081c515c-ab30-41fc-9a4c-622145389803.lovable.app-1776539446458.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/1fa85bc5-02fa-47b6-8580-94c5d2556d60/id-preview-63c92cb8--081c515c-ab30-41fc-9a4c-622145389803.lovable.app-1776539446458.png",
+      },
     ],
     links: [
       {
@@ -62,6 +83,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Scripts />
       </body>
     </html>
